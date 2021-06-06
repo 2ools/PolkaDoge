@@ -1,10 +1,13 @@
+// SPDX-License-Identifier: UNLICENSED
 // Sources flattened with hardhat v2.3.0 https://hardhat.org
 
 // File @openzeppelin/contracts/utils/Context.sol@v3.4.1-solc-0.7-2
 
-// SPDX-License-Identifier: MIT
+
 
 pragma solidity >=0.6.0 <0.8.0;
+
+pragma abicoder v2;
 
 /*
  * @dev Provides information about the current execution context, including the
@@ -30,7 +33,7 @@ abstract contract Context {
 
 // File @openzeppelin/contracts/math/SafeMath.sol@v3.4.1-solc-0.7-2
 
-// SPDX-License-Identifier: MIT
+
 
 pragma solidity ^0.7.0;
 
@@ -248,7 +251,7 @@ library SafeMath {
 
 // File @openzeppelin/contracts/access/Ownable.sol@v3.4.1-solc-0.7-2
 
-// SPDX-License-Identifier: MIT
+
 
 pragma solidity ^0.7.0;
 
@@ -319,7 +322,7 @@ abstract contract Ownable is Context {
 
 // File @openzeppelin/contracts/utils/Address.sol@v3.4.1-solc-0.7-2
 
-// SPDX-License-Identifier: MIT
+
 
 pragma solidity ^0.7.0;
 
@@ -512,7 +515,7 @@ library Address {
 
 // File @openzeppelin/contracts/token/ERC20/IERC20.sol@v3.4.1-solc-0.7-2
 
-// SPDX-License-Identifier: MIT
+
 
 pragma solidity ^0.7.0;
 
@@ -593,7 +596,7 @@ interface IERC20 {
 
 // File @openzeppelin/contracts/introspection/IERC165.sol@v3.4.1-solc-0.7-2
 
-// SPDX-License-Identifier: MIT
+
 
 pragma solidity ^0.7.0;
 
@@ -621,7 +624,6 @@ interface IERC165 {
 
 // File @openzeppelin/contracts/token/ERC721/IERC721.sol@v3.4.1-solc-0.7-2
 
-// SPDX-License-Identifier: MIT
 
 pragma solidity ^0.7.0;
 
@@ -752,7 +754,6 @@ interface IERC721 is IERC165 {
 
 // File @openzeppelin/contracts/token/ERC721/IERC721Metadata.sol@v3.4.1-solc-0.7-2
 
-// SPDX-License-Identifier: MIT
 
 pragma solidity ^0.7.0;
 
@@ -781,7 +782,6 @@ interface IERC721Metadata is IERC721 {
 
 // File @uniswap/v3-core/contracts/interfaces/callback/IUniswapV3SwapCallback.sol@v1.0.0
 
-// SPDX-License-Identifier: GPL-2.0-or-later
 pragma solidity >=0.5.0;
 
 /// @title Callback for IUniswapV3PoolActions#swap
@@ -806,9 +806,7 @@ interface IUniswapV3SwapCallback {
 
 // File @uniswap/v3-periphery/contracts/interfaces/ISwapRouter.sol@v1.1.0
 
-// SPDX-License-Identifier: GPL-2.0-or-later
 pragma solidity >=0.7.5;
-pragma abicoder v2;
 
 /// @title Router token swapping functionality
 /// @notice Functions for swapping tokens via Uniswap V3
@@ -875,7 +873,6 @@ interface ISwapRouter is IUniswapV3SwapCallback {
 
 // File @openzeppelin/contracts/token/ERC721/IERC721Enumerable.sol@v3.4.1-solc-0.7-2
 
-// SPDX-License-Identifier: MIT
 
 pragma solidity ^0.7.0;
 
@@ -906,9 +903,7 @@ interface IERC721Enumerable is IERC721 {
 
 // File @uniswap/v3-periphery/contracts/interfaces/IPoolInitializer.sol@v1.1.0
 
-// SPDX-License-Identifier: GPL-2.0-or-later
 pragma solidity >=0.7.5;
-pragma abicoder v2;
 
 /// @title Creates and initializes V3 Pools
 /// @notice Provides a method for creating and initializing a pool, if necessary, for bundling with other methods that
@@ -932,7 +927,6 @@ interface IPoolInitializer {
 
 // File @uniswap/v3-periphery/contracts/interfaces/IERC721Permit.sol@v1.1.0
 
-// SPDX-License-Identifier: GPL-2.0-or-later
 pragma solidity >=0.7.5;
 
 /// @title ERC721 with permit
@@ -966,7 +960,6 @@ interface IERC721Permit is IERC721 {
 
 // File @uniswap/v3-periphery/contracts/interfaces/IPeripheryPayments.sol@v1.1.0
 
-// SPDX-License-Identifier: GPL-2.0-or-later
 pragma solidity >=0.7.5;
 
 /// @title Periphery Payments
@@ -998,7 +991,6 @@ interface IPeripheryPayments {
 
 // File @uniswap/v3-periphery/contracts/interfaces/IPeripheryImmutableState.sol@v1.1.0
 
-// SPDX-License-Identifier: GPL-2.0-or-later
 pragma solidity >=0.5.0;
 
 /// @title Immutable state
@@ -1014,7 +1006,6 @@ interface IPeripheryImmutableState {
 
 // File @uniswap/v3-periphery/contracts/libraries/PoolAddress.sol@v1.1.0
 
-// SPDX-License-Identifier: GPL-2.0-or-later
 pragma solidity >=0.5.0;
 
 /// @title Provides functions for deriving a pool address from the factory, tokens, and the fee
@@ -1066,9 +1057,7 @@ library PoolAddress {
 
 // File @uniswap/v3-periphery/contracts/interfaces/INonfungiblePositionManager.sol@v1.1.0
 
-// SPDX-License-Identifier: GPL-2.0-or-later
 pragma solidity >=0.7.5;
-pragma abicoder v2;
 
 
 
@@ -1246,10 +1235,8 @@ interface INonfungiblePositionManager is
 
 // File contracts/polkadoge-v3.sol
 
-// SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.7.5;
 
-pragma abicoder v2;
 
 
 
@@ -1967,28 +1954,6 @@ contract Polkadoge is Context, IERC20, Ownable {
     }
 }
 
-
-// File contracts/Migrations.sol
-
-// SPDX-License-Identifier: MIT
-pragma solidity >=0.4.22 <0.9.0;
-
-contract Migrations {
-  address public owner = msg.sender;
-  uint public last_completed_migration;
-
-  modifier restricted() {
-    require(
-      msg.sender == owner,
-      "This function is restricted to the contract's owner"
-    );
-    _;
-  }
-
-  function setCompleted(uint completed) public restricted {
-    last_completed_migration = completed;
-  }
-}
 
 
 // File contracts/polkadoge-univ3-flat.sol
